@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { useAuth } from '../../context/AuthContext';
@@ -34,6 +35,10 @@ export default function ProfilePage() {
         email: user.email,
         role: user.role || 'Patient'
       }));
+      // Added: Use Google picture if available
+      if (user.picture) {
+        setProfileImage(user.picture);
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
@@ -77,7 +82,7 @@ export default function ProfilePage() {
         <div className="text-center p-8 bg-white dark:bg-slate-900 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-800">
           <h2 className="text-2xl font-bold text-slate-800 dark:text-white mb-4">Please Sign In</h2>
           <p className="text-slate-600 dark:text-slate-400 mb-6">You need to be logged in to view your profile.</p>
-          <a href="/sign-in" className="px-6 py-3 bg-green-600 text-white rounded-xl font-semibold hover:bg-green-700 transition">Sign In</a>
+          <Link href="/sign-in" className="px-6 py-3 bg-green-600 text-white rounded-xl font-semibold hover:bg-green-700 transition">Sign In</Link>
         </div>
       </div>
     );
