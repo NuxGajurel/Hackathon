@@ -52,74 +52,83 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-1">
             <Link
               href="/"
-              className={`px-4 py-2 rounded-lg transition-colors ${
-                isActive('/')
-                  ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
-                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
-              }`}
+              className={`px-4 py-2 rounded-lg transition-colors ${isActive('/')
+                ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
+                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
+                }`}
             >
               {t('nav.home')}
             </Link>
             <Link
               href="/services"
-              className={`px-4 py-2 rounded-lg transition-colors ${
-                isActive('/services')
-                  ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
-                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
-              }`}
+              className={`px-4 py-2 rounded-lg transition-colors ${isActive('/services')
+                ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
+                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
+                }`}
             >
               {t('nav.services')}
             </Link>
             <Link
               href="/doctors"
-              className={`px-4 py-2 rounded-lg transition-colors ${
-                isActive('/doctors')
-                  ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
-                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
-              }`}
+              className={`px-4 py-2 rounded-lg transition-colors ${isActive('/doctors')
+                ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
+                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
+                }`}
             >
               {t('nav.doctors')}
             </Link>
             <Link
               href="/emergency"
-              className={`px-4 py-2 rounded-lg transition-colors ${
-                isActive('/emergency')
-                  ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
-                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
-              }`}
+              className={`px-4 py-2 rounded-lg transition-colors ${isActive('/emergency')
+                ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
+                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
+                }`}
             >
               {t('nav.emergency')}
             </Link>
             <Link
               href="/about"
-              className={`px-4 py-2 rounded-lg transition-colors ${
-                isActive('/about')
-                  ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
-                  : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
-              }`}
+              className={`px-4 py-2 rounded-lg transition-colors ${isActive('/about')
+                ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
+                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
+                }`}
             >
               {t('nav.about')}
             </Link>
+
+            {/* Auth Buttons */}
+            <div className="flex items-center space-x-2 ml-2">
+              <Link
+                href="/sign-in"
+                className="px-4 py-2 text-slate-600 dark:text-slate-300 hover:text-red-600 dark:hover:text-red-400 font-medium transition-colors"
+              >
+                {t('signIn')}
+              </Link>
+              <Link
+                href="/sign-up"
+                className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition-colors shadow-sm"
+              >
+                {t('signUp')}
+              </Link>
+            </div>
 
             {/* Language Switcher */}
             <div className="ml-4 flex items-center space-x-2 border-l border-slate-200 dark:border-slate-700 pl-4">
               <button
                 onClick={() => changeLanguage('ne')}
-                className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
-                  i18n.language === 'ne'
-                    ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400'
-                    : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
-                }`}
+                className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${i18n.language === 'ne'
+                  ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400'
+                  : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+                  }`}
               >
                 ने
               </button>
               <button
                 onClick={() => changeLanguage('en')}
-                className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
-                  i18n.language === 'en'
-                    ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400'
-                    : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
-                }`}
+                className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${i18n.language === 'en'
+                  ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400'
+                  : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+                  }`}
               >
                 EN
               </button>
@@ -149,77 +158,86 @@ export default function Navbar() {
               <Link
                 href="/"
                 onClick={() => setIsMenuOpen(false)}
-                className={`px-4 py-2 rounded-lg transition-colors ${
-                  isActive('/')
-                    ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
-                    : 'text-slate-600 dark:text-slate-300'
-                }`}
+                className={`px-4 py-2 rounded-lg transition-colors ${isActive('/')
+                  ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
+                  : 'text-slate-600 dark:text-slate-300'
+                  }`}
               >
                 {t('nav.home')}
               </Link>
               <Link
                 href="/services"
                 onClick={() => setIsMenuOpen(false)}
-                className={`px-4 py-2 rounded-lg transition-colors ${
-                  isActive('/services')
-                    ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
-                    : 'text-slate-600 dark:text-slate-300'
-                }`}
+                className={`px-4 py-2 rounded-lg transition-colors ${isActive('/services')
+                  ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
+                  : 'text-slate-600 dark:text-slate-300'
+                  }`}
               >
                 {t('nav.services')}
               </Link>
               <Link
                 href="/doctors"
                 onClick={() => setIsMenuOpen(false)}
-                className={`px-4 py-2 rounded-lg transition-colors ${
-                  isActive('/doctors')
-                    ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
-                    : 'text-slate-600 dark:text-slate-300'
-                }`}
+                className={`px-4 py-2 rounded-lg transition-colors ${isActive('/doctors')
+                  ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
+                  : 'text-slate-600 dark:text-slate-300'
+                  }`}
               >
                 {t('nav.doctors')}
               </Link>
               <Link
                 href="/emergency"
                 onClick={() => setIsMenuOpen(false)}
-                className={`px-4 py-2 rounded-lg transition-colors ${
-                  isActive('/emergency')
-                    ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
-                    : 'text-slate-600 dark:text-slate-300'
-                }`}
+                className={`px-4 py-2 rounded-lg transition-colors ${isActive('/emergency')
+                  ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
+                  : 'text-slate-600 dark:text-slate-300'
+                  }`}
               >
                 {t('nav.emergency')}
               </Link>
               <Link
                 href="/about"
                 onClick={() => setIsMenuOpen(false)}
-                className={`px-4 py-2 rounded-lg transition-colors ${
-                  isActive('/about')
-                    ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
-                    : 'text-slate-600 dark:text-slate-300'
-                }`}
+                className={`px-4 py-2 rounded-lg transition-colors ${isActive('/about')
+                  ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
+                  : 'text-slate-600 dark:text-slate-300'
+                  }`}
               >
                 {t('nav.about')}
               </Link>
+              <div className="pt-2 border-t border-slate-200 dark:border-slate-700 flex flex-col space-y-2">
+                <Link
+                  href="/sign-in"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="px-4 py-2 text-slate-600 dark:text-slate-300 hover:text-red-600 dark:hover:text-red-400 font-medium"
+                >
+                  {t('nav.signIn')}
+                </Link>
+                <Link
+                  href="/sign-up"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="mx-4 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium text-center"
+                >
+                  {t('nav.signUp')}
+                </Link>
+              </div>
               <div className="flex items-center space-x-2 pt-2 border-t border-slate-200 dark:border-slate-700 mt-2">
                 <span className="px-4 py-2 text-sm text-slate-600 dark:text-slate-400">{t('nav.language')}:</span>
                 <button
                   onClick={() => changeLanguage('ne')}
-                  className={`px-3 py-1 rounded-md text-sm font-medium ${
-                    i18n.language === 'ne'
-                      ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400'
-                      : 'text-slate-600 dark:text-slate-300'
-                  }`}
+                  className={`px-3 py-1 rounded-md text-sm font-medium ${i18n.language === 'ne'
+                    ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400'
+                    : 'text-slate-600 dark:text-slate-300'
+                    }`}
                 >
                   नेपाली
                 </button>
                 <button
                   onClick={() => changeLanguage('en')}
-                  className={`px-3 py-1 rounded-md text-sm font-medium ${
-                    i18n.language === 'en'
-                      ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400'
-                      : 'text-slate-600 dark:text-slate-300'
-                  }`}
+                  className={`px-3 py-1 rounded-md text-sm font-medium ${i18n.language === 'en'
+                    ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400'
+                    : 'text-slate-600 dark:text-slate-300'
+                    }`}
                 >
                   English
                 </button>

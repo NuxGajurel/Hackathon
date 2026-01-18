@@ -10,7 +10,9 @@ const neTranslation = {
     doctors: "डाक्टरहरू",
     emergency: "आपतकालीन",
     about: "हाम्रो बारेमा",
-    language: "भाषा"
+    language: "भाषा",
+    signIn: "साइन इन",
+    signUp: "खाता खोल्नुहोस्"
   },
   home: {
     title: "सरल सेवा - हाम्रो सेवामा स्वागत छ",
@@ -55,7 +57,9 @@ const enTranslation = {
     doctors: "Find Doctors",
     emergency: "Emergency",
     about: "About Us",
-    language: "Language"
+    language: "Language",
+    signIn: "Sign In",
+    signUp: "Sign Up"
   },
   home: {
     title: "SaralSewa - Welcome to Hamro Sewa",
