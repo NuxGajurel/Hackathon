@@ -16,25 +16,25 @@ const HOSPITALS: Hospital[] = [
         id: 1,
         name: 'B&B HOSPITAL',
         location: 'Gwarko, Lalitpur',
-        image: '/images/hospitals/bnb.png'
+        image: '/images/hospital.jpg'
     },
     {
         id: 2,
         name: 'Bir Hospital',
         location: 'Kanti Path, Kathmandu',
-        image: '/images/hospitals/bir.png'
+        image: '/images/hospital1.jpg'
     },
     {
         id: 3,
         name: 'B.P. Koirala Lions Center For Ophthalmic Studies',
         location: 'Kathmandu',
-        image: '/images/hospitals/bp_koirala.png'
+        image: '/images/hospital2.jpg'
     },
     {
         id: 4,
         name: 'Civil Service Hospital of Nepal',
         location: 'Minbhawan, Kathmandu',
-        image: '/images/hospitals/civil.png'
+        image: '/images/hospital3.jpg'
     }
 ];
 
@@ -122,12 +122,15 @@ export default function HospitalsPage() {
                                     {hospital.location}
                                 </p>
 
-                                <button className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2.5 px-4 rounded-lg transition-colors flex items-center justify-between">
+                                <Link
+                                    href={`/hospitals/${hospital.id}`}
+                                    className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2.5 px-4 rounded-lg transition-colors flex items-center justify-between"
+                                >
                                     <span>Book an Appointment</span>
                                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                                     </svg>
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     ))}

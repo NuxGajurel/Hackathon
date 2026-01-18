@@ -33,7 +33,7 @@ export default function EmergencyPage() {
         </div>
 
         {/* Quick Actions */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-12">
           <div className="p-6 bg-white rounded-2xl border-2 border-[#E6F7F0] hover:shadow-xl transition-all">
             <h3 className="text-xl font-bold mb-3 text-[#3B4D5E]">First Aid Guide</h3>
             <p className="text-[#6A7C8E] mb-4">
@@ -62,6 +62,17 @@ export default function EmergencyPage() {
             <button className="px-4 py-2 bg-[#E6F7F0] text-[#48C78E] rounded-lg font-medium hover:bg-[#48C78E] hover:text-white transition-colors">
               View Contacts
             </button>
+          </div>
+
+          <div className="p-6 bg-white rounded-2xl border-2 border-[#E6F7F0] hover:shadow-xl transition-all relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-16 h-16 bg-red-50 rounded-bl-full -mr-8 -mt-8 z-0 group-hover:bg-red-100 transition-colors"></div>
+            <h3 className="text-xl font-bold mb-3 text-[#3B4D5E] relative z-10">Track Ambulance</h3>
+            <p className="text-[#6A7C8E] mb-4 relative z-10">
+              Live tracking for nearby ambulances with ETA.
+            </p>
+            <a href="/ambulance" className="inline-block px-4 py-2 bg-red-100 text-red-600 rounded-lg font-medium hover:bg-red-600 hover:text-white transition-colors relative z-10">
+              Start Tracking
+            </a>
           </div>
         </div>
 

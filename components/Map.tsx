@@ -6,15 +6,18 @@ import L from 'leaflet';
 import { useEffect, useState } from 'react';
 
 // Fix for default marker icon not showing
-const icon = L.icon({
-    iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
-    iconRetinaUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png',
-    shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34],
-    shadowSize: [41, 41]
-});
+let icon: L.Icon | undefined;
+if (typeof window !== 'undefined') {
+    icon = L.icon({
+        iconUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon.png',
+        iconRetinaUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png',
+        shadowUrl: 'https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png',
+        iconSize: [25, 41],
+        iconAnchor: [12, 41],
+        popupAnchor: [1, -34],
+        shadowSize: [41, 41]
+    });
+}
 
 // Healthcare locations data for Itahari, Sunsari
 const locations = [
@@ -236,47 +239,7 @@ export default function Map() {
                             key={type}
                             onClick={() => setSelectedType(type)}
                             className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors ${selectedType === type
-                                ? 'bg-red-600 text-white shadow-md'
-                                : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600'
-                                }`}
-                        >
-                            {type}
-                        </button>
-                    ))}
-                </div>
-
-                {/* Search and Location */}
-                <div className="flex flex-col sm:flex-row gap-2 w-full md:w-auto ml-auto">
-                    <input
-                        type="text"
-                        placeholder="Search hospitals..."
-                        className="px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-red-500 w-full sm:w-64"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                    />
-                    <button
-                        onClick={handleGetLocation}
-                        disabled={loadingLocation}
-                        className="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg flex items-center justify-center gap-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
-                    >
-                        {loadingLocation ? (
-                            <span>Locating...</span>
-                        ) : (
-                            <>
-                                <span>📍</span> Find Me
-                            </>
-                        )}
-                    </button>
-                </div>
-
-                {/* Filter Types */}
-                <div className="flex flex-wrap gap-2">
-                    {facilityTypes.map((type) => (
-                        <button
-                            key={type}
-                            onClick={() => setSelectedType(type)}
-                            className={`px-3 py-1.5 text-sm font-medium rounded-lg transition-colors ${selectedType === type
-                                ? 'bg-red-600 text-white shadow-md'
+                                ? 'bg-green-600 text-white shadow-md'
                                 : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-600'
                                 }`}
                         >
@@ -321,9 +284,9 @@ export default function Map() {
                                 <div className="p-2 min-w-[200px]">
                                     <h3 className="font-bold text-lg text-slate-800">{location.name}</h3>
                                     <div className="flex justify-between items-center mt-1">
-                                        <p className="text-sm font-semibold text-red-600">{location.type}</p>
+                                        <p className="text-sm font-semibold text-green-600">{location.type}</p>
                                         {(location as any).distance && (
-                                            <span className="text-xs font-bold bg-blue-100 text-blue-800 px-2 py-0.5 rounded-full">
+                                            <span className="text-xs font-bold bg-green-100 text-green-800 px-2 py-0.5 rounded-full">
                                                 {((location as any).distance).toFixed(1)} km away
                                             </span>
                                         )}
@@ -339,7 +302,7 @@ export default function Map() {
                                         </p>
                                     </div>
                                     <button
-                                        className="mt-3 w-full bg-red-600 hover:bg-red-700 text-white text-sm py-1.5 rounded-md transition-colors flex items-center justify-center gap-2"
+                                        className="mt-3 w-full bg-green-600 hover:bg-green-700 text-white text-sm py-1.5 rounded-md transition-colors flex items-center justify-center gap-2"
                                         onClick={() => window.open(`https://www.google.com/maps/dir/?api=1&destination=${location.position[0]},${location.position[1]}`, '_blank')}
                                     >
                                         <span>🗺️</span> Get Directions
