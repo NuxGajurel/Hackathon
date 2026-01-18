@@ -1,6 +1,6 @@
 'use server';
 
-const GEN_AI_KEY = 'AIzaSyAn-3L9HXW6hRkzghyHXNapGc3lUBnyCOs';
+const GEN_AI_KEY = process.env.GEMINI_API_KEY;
 
 const MODELS = ['gemini-1.5-flash', 'gemini-pro', 'gemini-2.0-flash-exp'];
 
