@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "../components/Navbar";
 import I18nProvider from "./i18n-provider";
 import { AuthProvider } from "../context/AuthContext";
+import GoogleAuthWrapper from "../components/GoogleAuthWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,10 +32,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <I18nProvider>
-          <AuthProvider>
-            <Navbar />
-            {children}
-          </AuthProvider>
+          <GoogleAuthWrapper>
+            <AuthProvider>
+              <Navbar />
+              {children}
+            </AuthProvider>
+          </GoogleAuthWrapper>
         </I18nProvider>
       </body>
     </html>

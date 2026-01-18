@@ -163,7 +163,7 @@ export default function Home() {
             </div>
 
             {/* Feature Cards Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 text-left">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-48 text-left">
               <div className="bg-gradient-to-br from-white to-[#F8FAFC] p-8 rounded-2xl border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group">
                 <div className="w-14 h-14 bg-gradient-to-br from-[#48C78E] to-[#3db07d] rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
