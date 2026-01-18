@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "../components/Navbar";
+import I18nProvider from "./i18n-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Godawari Hacks - Home",
-  description: "Building innovative solutions and creating amazing projects",
+  title: "SaralSewa - Hamro Sewa | Healthcare for Rural Nepal",
+  description: "AI-powered healthcare management system for rural areas of Nepal",
 };
 
 export default function RootLayout({
@@ -23,11 +25,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ne">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <I18nProvider>
+          <Navbar />
+          {children}
+        </I18nProvider>
       </body>
     </html>
   );

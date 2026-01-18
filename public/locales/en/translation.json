@@ -1,0 +1,22 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "doctors": "Find Doctors",
+    "emergency": "Emergency",
+    "about": "About Us",
+    "language": "Language"
+  },
+  "home": {
+    "title": "SaralSewa - Welcome to Hamro Sewa",
+    "subtitle": "AI-powered healthcare management system for rural areas of Nepal",
+    "description": "Low-bandwidth, mobile-first healthcare solution that helps during emergency situations.",
+    "getStarted": "Get Started",
+    "learnMore": "Learn More"
+  },
+  "common": {
+    "welcome": "Welcome",
+    "loading": "Loading...",
+    "error": "Error"
+  }
+}
