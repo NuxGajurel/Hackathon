@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Footer from "./components/Footer";
 
-// Using placeholder paths - replace with actual images in public/images/ folder
-const SENImage = "/images/la.jpg";
+// Using actual image paths from public/images/ folder
+const SENImage = "/images/lala.jpg";
 const Doctor = "/images/lala.jpg";
 const Doctor2 = "/images/la2.jpg";
-const LImage = "/images/l.jpg";
+const LImage = "/images/la2.jpg";
 export default function Home() {
   const left = [
     {
