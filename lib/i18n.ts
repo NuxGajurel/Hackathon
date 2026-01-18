@@ -142,8 +142,8 @@ if (!i18n.isInitialized) {
           translation: enTranslation,
         },
       },
-      fallbackLng: 'ne', // Default to Nepali
-      lng: 'ne', // Set Nepali as default
+      fallbackLng: 'en', // Default to English
+      lng: 'en', // Set English as default
       interpolation: {
         escapeValue: false, // React already escapes
       },

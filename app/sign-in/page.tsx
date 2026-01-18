@@ -46,6 +46,7 @@ export default function SignInPage() {
           name: googleUser.name,
           email: googleUser.email,
           role: 'Patient', // Default role
+          picture: googleUser.picture,
         });
       } catch (error) {
         console.error('Failed to fetch user info from Google', error);
