@@ -22,6 +22,7 @@ export default function SignUpPage() {
     login({
       name: formData.name,
       email: formData.email,
+      role: formData.role,
     });
   };
 

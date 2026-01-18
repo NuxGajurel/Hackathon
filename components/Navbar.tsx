@@ -5,9 +5,8 @@ import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { useAuth } from '../context/AuthContext';
 import { useTranslation } from 'react-i18next';
-import '../lib/i18n'; // Ensure i18n is initialized
-
-
+import Image from 'next/image';
+import '../lib/i18n';
 
 export default function Navbar() {
   const { t, i18n } = useTranslation();
@@ -18,6 +17,7 @@ export default function Navbar() {
 
   useEffect(() => {
     setMounted(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const changeLanguage = (lng: 'en' | 'ne') => {
@@ -30,7 +30,7 @@ export default function Navbar() {
   };
 
   if (!mounted) {
-    return null; // Prevent hydration mismatch
+    return null;
   }
 
   return (
@@ -40,10 +40,14 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-linear-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center">
-                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
+              <div className="w-10 h-10 relative rounded-lg overflow-hidden flex items-center justify-center">
+                <Image
+                  src="/logo.jpeg"
+                  alt="SaralSewa Logo"
+                  width={40}
+                  height={40}
+                  className="object-cover"
+                />
               </div>
               <h1 className="text-xl font-bold bg-linear-to-r from-green-600 to-green-700 bg-clip-text text-transparent">
                 SaralSewa
@@ -53,24 +57,18 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
+
             <Link
-              href="/"
-              className={`px-4 py-2 rounded-lg transition-colors ${isActive('/')
+              href="/aisewa"
+              className={`px-4 py-2 rounded-lg transition-colors flex items-center ${isActive('/aisewa')
                 ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-medium'
                 : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
                 }`}
             >
-              {t('nav.home')}
+              <span className="mr-1.5 w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+              {t('nav.aiSewa')}
             </Link>
-            <Link
-              href="/services"
-              className={`px-4 py-2 rounded-lg transition-colors ${isActive('/services')
-                ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-medium'
-                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
-                }`}
-            >
-              {t('nav.services')}
-            </Link>
+
             <Link
               href="/doctors"
               className={`px-4 py-2 rounded-lg transition-colors ${isActive('/doctors')
@@ -81,6 +79,15 @@ export default function Navbar() {
               {t('nav.doctors')}
             </Link>
             <Link
+              href="/hospitals"
+              className={`px-4 py-2 rounded-lg transition-colors ${isActive('/hospitals')
+                ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-medium'
+                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
+                }`}
+            >
+              Hospitals
+            </Link>
+            <Link
               href="/emergency"
               className={`px-4 py-2 rounded-lg transition-colors ${isActive('/emergency')
                 ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-medium'
@@ -88,15 +95,6 @@ export default function Navbar() {
                 }`}
             >
               {t('nav.emergency')}
-            </Link>
-            <Link
-              href="/about"
-              className={`px-4 py-2 rounded-lg transition-colors ${isActive('/about')
-                ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-medium'
-                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
-                }`}
-            >
-              {t('nav.about')}
             </Link>
             <Link
               href="/map"
@@ -109,8 +107,9 @@ export default function Navbar() {
             </Link>
 
 
+
             {/* Auth Buttons */}
-            <div className="flex items-center space-x-2 ml-2">
+            <div className="flex items-center space-x-2 ml-4 border-l border-slate-200 dark:border-slate-700 pl-4">
               {user ? (
                 <>
                   <Link
@@ -167,6 +166,7 @@ export default function Navbar() {
             </div>
           </div>
 
+
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -198,6 +198,17 @@ export default function Navbar() {
                 {t('nav.home')}
               </Link>
               <Link
+                href="/aisewa"
+                onClick={() => setIsMenuOpen(false)}
+                className={`px-4 py-2 rounded-lg transition-colors flex items-center ${isActive('/aisewa')
+                  ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-medium'
+                  : 'text-slate-600 dark:text-slate-300'
+                  }`}
+              >
+                <span className="mr-1.5 w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                {t('nav.aiSewa')}
+              </Link>
+              <Link
                 href="/services"
                 onClick={() => setIsMenuOpen(false)}
                 className={`px-4 py-2 rounded-lg transition-colors ${isActive('/services')
@@ -216,6 +227,16 @@ export default function Navbar() {
                   }`}
               >
                 {t('nav.doctors')}
+              </Link>
+              <Link
+                href="/hospitals"
+                onClick={() => setIsMenuOpen(false)}
+                className={`px-4 py-2 rounded-lg transition-colors ${isActive('/hospitals')
+                  ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-medium'
+                  : 'text-slate-600 dark:text-slate-300'
+                  }`}
+              >
+                Hospitals
               </Link>
               <Link
                 href="/emergency"

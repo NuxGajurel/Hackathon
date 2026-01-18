@@ -19,6 +19,7 @@ export default function SignInPage() {
     login({
       name: 'User', // Mock name
       email: formData.email,
+      role: 'Patient', // Mock role for sign in
     });
   };
 

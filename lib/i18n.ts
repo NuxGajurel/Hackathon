@@ -15,7 +15,20 @@ const neTranslation = {
     signUp: "खाता खोल्नुहोस्",
     profile: "प्रोफाइल",
     logout: "लग आउट",
-    map: "नक्सा"
+    map: "नक्सा",
+    aiSewa: "AI सेवा"
+  },
+  profile: {
+    editProfile: "प्रोफाइल सम्पादन गर्नुहोस्",
+    saveChanges: "परिवर्तनहरू बचत गर्नुहोस्",
+    cancel: "रद्द गर्नुहोस्",
+    uploadCertificate: "प्रमाणपत्र अपलोड गर्नुहोस्",
+    doctorOnly: "डाक्टरहरूको लागि मात्र"
+  },
+  ai: {
+    chatTitle: "AI स्वास्थ्य सल्लाहकार",
+    chatPlaceholder: "आफ्नो स्वास्थ्य जिज्ञासा सोध्नुहोस्...",
+    getAdvice: "स्वास्थ्य सल्लाह लिनुहोस्"
   },
   home: {
     title: "सरल सेवा - हाम्रो सेवामा स्वागत छ",
@@ -65,7 +78,20 @@ const enTranslation = {
     signUp: "Sign Up",
     profile: "Profile",
     logout: "Logout",
-    map: "Map"
+    map: "Map",
+    aiSewa: "AISewa"
+  },
+  profile: {
+    editProfile: "Edit Profile",
+    saveChanges: "Save Changes",
+    cancel: "Cancel",
+    uploadCertificate: "Upload Certificate",
+    doctorOnly: "For Doctors Only"
+  },
+  ai: {
+    chatTitle: "AI Health Advisor",
+    chatPlaceholder: "Ask your health query...",
+    getAdvice: "Get Health Advice"
   },
   home: {
     title: "SaralSewa - Welcome to Hamro Sewa",
