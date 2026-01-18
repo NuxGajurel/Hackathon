@@ -1,23 +1,26 @@
 'use client';
 
 import Link from 'next/link';
-import { useTranslation } from 'react-i18next';
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+import { useAuth } from '../context/AuthContext';
+import { useTranslation } from 'react-i18next';
+import '../lib/i18n'; // Ensure i18n is initialized
+
+
 
 export default function Navbar() {
   const { t, i18n } = useTranslation();
   const pathname = usePathname();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, logout } = useAuth();
 
   useEffect(() => {
     setMounted(true);
-    // Dynamically import i18n
-    import('../lib/i18n');
   }, []);
 
-  const changeLanguage = (lng: string) => {
+  const changeLanguage = (lng: 'en' | 'ne') => {
     i18n.changeLanguage(lng);
     setIsMenuOpen(false);
   };
@@ -37,12 +40,12 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-red-500 to-red-600 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-linear-to-br from-green-500 to-green-600 rounded-lg flex items-center justify-center">
                 <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                 </svg>
               </div>
-              <h1 className="text-xl font-bold bg-gradient-to-r from-red-600 to-red-700 bg-clip-text text-transparent">
+              <h1 className="text-xl font-bold bg-linear-to-r from-green-600 to-green-700 bg-clip-text text-transparent">
                 SaralSewa
               </h1>
             </div>
@@ -53,7 +56,7 @@ export default function Navbar() {
             <Link
               href="/"
               className={`px-4 py-2 rounded-lg transition-colors ${isActive('/')
-                ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
+                ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-medium'
                 : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
                 }`}
             >
@@ -62,7 +65,7 @@ export default function Navbar() {
             <Link
               href="/services"
               className={`px-4 py-2 rounded-lg transition-colors ${isActive('/services')
-                ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
+                ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-medium'
                 : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
                 }`}
             >
@@ -71,7 +74,7 @@ export default function Navbar() {
             <Link
               href="/doctors"
               className={`px-4 py-2 rounded-lg transition-colors ${isActive('/doctors')
-                ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
+                ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-medium'
                 : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
                 }`}
             >
@@ -80,7 +83,7 @@ export default function Navbar() {
             <Link
               href="/emergency"
               className={`px-4 py-2 rounded-lg transition-colors ${isActive('/emergency')
-                ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
+                ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-medium'
                 : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
                 }`}
             >
@@ -89,27 +92,56 @@ export default function Navbar() {
             <Link
               href="/about"
               className={`px-4 py-2 rounded-lg transition-colors ${isActive('/about')
-                ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
+                ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-medium'
                 : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
                 }`}
             >
               {t('nav.about')}
             </Link>
+            <Link
+              href="/map"
+              className={`px-4 py-2 rounded-lg transition-colors ${isActive('/map')
+                ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-medium'
+                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
+                }`}
+            >
+              {t('nav.map')}
+            </Link>
+
 
             {/* Auth Buttons */}
             <div className="flex items-center space-x-2 ml-2">
-              <Link
-                href="/sign-in"
-                className="px-4 py-2 text-slate-600 dark:text-slate-300 hover:text-red-600 dark:hover:text-red-400 font-medium transition-colors"
-              >
-                {t('signIn')}
-              </Link>
-              <Link
-                href="/sign-up"
-                className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium transition-colors shadow-sm"
-              >
-                {t('signUp')}
-              </Link>
+              {user ? (
+                <>
+                  <Link
+                    href="/profile"
+                    className="px-4 py-2 text-slate-600 dark:text-slate-300 hover:text-green-600 dark:hover:text-green-400 font-medium transition-colors"
+                  >
+                    {t('nav.profile')}
+                  </Link>
+                  <button
+                    onClick={logout}
+                    className="px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700 rounded-lg font-medium transition-colors border border-slate-200 dark:border-slate-700"
+                  >
+                    {t('nav.logout')}
+                  </button>
+                </>
+              ) : (
+                <>
+                  <Link
+                    href="/sign-in"
+                    className="px-4 py-2 text-slate-600 dark:text-slate-300 hover:text-green-600 dark:hover:text-green-400 font-medium transition-colors"
+                  >
+                    {t('nav.signIn')}
+                  </Link>
+                  <Link
+                    href="/sign-up"
+                    className="px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium transition-colors shadow-sm"
+                  >
+                    {t('nav.signUp')}
+                  </Link>
+                </>
+              )}
             </div>
 
             {/* Language Switcher */}
@@ -117,7 +149,7 @@ export default function Navbar() {
               <button
                 onClick={() => changeLanguage('ne')}
                 className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${i18n.language === 'ne'
-                  ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400'
+                  ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400'
                   : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
                   }`}
               >
@@ -126,7 +158,7 @@ export default function Navbar() {
               <button
                 onClick={() => changeLanguage('en')}
                 className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${i18n.language === 'en'
-                  ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400'
+                  ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400'
                   : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
                   }`}
               >
@@ -159,7 +191,7 @@ export default function Navbar() {
                 href="/"
                 onClick={() => setIsMenuOpen(false)}
                 className={`px-4 py-2 rounded-lg transition-colors ${isActive('/')
-                  ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
+                  ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-medium'
                   : 'text-slate-600 dark:text-slate-300'
                   }`}
               >
@@ -169,7 +201,7 @@ export default function Navbar() {
                 href="/services"
                 onClick={() => setIsMenuOpen(false)}
                 className={`px-4 py-2 rounded-lg transition-colors ${isActive('/services')
-                  ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
+                  ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-medium'
                   : 'text-slate-600 dark:text-slate-300'
                   }`}
               >
@@ -179,7 +211,7 @@ export default function Navbar() {
                 href="/doctors"
                 onClick={() => setIsMenuOpen(false)}
                 className={`px-4 py-2 rounded-lg transition-colors ${isActive('/doctors')
-                  ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
+                  ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-medium'
                   : 'text-slate-600 dark:text-slate-300'
                   }`}
               >
@@ -189,7 +221,7 @@ export default function Navbar() {
                 href="/emergency"
                 onClick={() => setIsMenuOpen(false)}
                 className={`px-4 py-2 rounded-lg transition-colors ${isActive('/emergency')
-                  ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
+                  ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-medium'
                   : 'text-slate-600 dark:text-slate-300'
                   }`}
               >
@@ -199,34 +231,69 @@ export default function Navbar() {
                 href="/about"
                 onClick={() => setIsMenuOpen(false)}
                 className={`px-4 py-2 rounded-lg transition-colors ${isActive('/about')
-                  ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400 font-medium'
+                  ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-medium'
                   : 'text-slate-600 dark:text-slate-300'
                   }`}
               >
                 {t('nav.about')}
               </Link>
+              <Link
+                href="/map"
+                onClick={() => setIsMenuOpen(false)}
+                className={`px-4 py-2 rounded-lg transition-colors ${isActive('/map')
+                  ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-medium'
+                  : 'text-slate-600 dark:text-slate-300'
+                  }`}
+              >
+                {t('nav.map')}
+              </Link>
+
               <div className="pt-2 border-t border-slate-200 dark:border-slate-700 flex flex-col space-y-2">
-                <Link
-                  href="/sign-in"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="px-4 py-2 text-slate-600 dark:text-slate-300 hover:text-red-600 dark:hover:text-red-400 font-medium"
-                >
-                  {t('nav.signIn')}
-                </Link>
-                <Link
-                  href="/sign-up"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="mx-4 px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg font-medium text-center"
-                >
-                  {t('nav.signUp')}
-                </Link>
+                {user ? (
+                  <>
+                    <Link
+                      href="/profile"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="px-4 py-2 text-slate-600 dark:text-slate-300 hover:text-green-600 dark:hover:text-green-400 font-medium"
+                    >
+                      {t('nav.profile')}
+                    </Link>
+                    <button
+                      onClick={() => {
+                        logout();
+                        setIsMenuOpen(false);
+                      }}
+                      className="mx-4 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700 rounded-lg font-medium text-center border border-slate-200 dark:border-slate-700"
+                    >
+                      {t('nav.logout')}
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      href="/sign-in"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="px-4 py-2 text-slate-600 dark:text-slate-300 hover:text-green-600 dark:hover:text-green-400 font-medium"
+                    >
+                      {t('nav.signIn')}
+                    </Link>
+                    <Link
+                      href="/sign-up"
+                      onClick={() => setIsMenuOpen(false)}
+                      className="mx-4 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium text-center"
+                    >
+                      {t('nav.signUp')}
+                    </Link>
+                  </>
+                )}
               </div>
+
               <div className="flex items-center space-x-2 pt-2 border-t border-slate-200 dark:border-slate-700 mt-2">
                 <span className="px-4 py-2 text-sm text-slate-600 dark:text-slate-400">{t('nav.language')}:</span>
                 <button
                   onClick={() => changeLanguage('ne')}
                   className={`px-3 py-1 rounded-md text-sm font-medium ${i18n.language === 'ne'
-                    ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400'
+                    ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400'
                     : 'text-slate-600 dark:text-slate-300'
                     }`}
                 >
@@ -235,7 +302,7 @@ export default function Navbar() {
                 <button
                   onClick={() => changeLanguage('en')}
                   className={`px-3 py-1 rounded-md text-sm font-medium ${i18n.language === 'en'
-                    ? 'bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400'
+                    ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400'
                     : 'text-slate-600 dark:text-slate-300'
                     }`}
                 >

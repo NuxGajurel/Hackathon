@@ -12,7 +12,10 @@ const neTranslation = {
     about: "हाम्रो बारेमा",
     language: "भाषा",
     signIn: "साइन इन",
-    signUp: "खाता खोल्नुहोस्"
+    signUp: "खाता खोल्नुहोस्",
+    profile: "प्रोफाइल",
+    logout: "लग आउट",
+    map: "नक्सा"
   },
   home: {
     title: "सरल सेवा - हाम्रो सेवामा स्वागत छ",
@@ -59,7 +62,10 @@ const enTranslation = {
     about: "About Us",
     language: "Language",
     signIn: "Sign In",
-    signUp: "Sign Up"
+    signUp: "Sign Up",
+    profile: "Profile",
+    logout: "Logout",
+    map: "Map"
   },
   home: {
     title: "SaralSewa - Welcome to Hamro Sewa",
