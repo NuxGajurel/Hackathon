@@ -114,11 +114,9 @@ export default function AISewaPage() {
                         <button
                             onClick={handleSend}
                             disabled={isLoading || !input.trim()}
-                            className="px-6 py-3 bg-green-600 hover:bg-green-700 disabled:bg-slate-400 text-white rounded-xl font-semibold transition-all shadow-md active:scale-95"
+                            className="px-6 py-3 bg-green-600 hover:bg-green-700 disabled:bg-slate-400 text-white rounded-xl font-semibold transition-all shadow-md active:scale-95 whitespace-nowrap"
                         >
-                            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                            </svg>
+                            {t('ai.getAdvice')}
                         </button>
                     </div>
                     <p className="mt-3 text-[10px] text-center text-slate-400 uppercase tracking-widest">
