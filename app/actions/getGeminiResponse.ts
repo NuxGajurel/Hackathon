@@ -17,7 +17,18 @@ export async function getGeminiResponse(message: string) {
                         'Content-Type': 'application/json',
                     },
                     body: JSON.stringify({
-                        contents: [{ parts: [{ text: `You are a helpful and expert health advisor for SaralSewa. Answer this health query concisely: ${message}` }] }],
+                        contents: [{
+                            parts: [{
+                                text: `You are a helpful and expert health advisor for SaralSewa. Your role is unauthorized to provide medical diagnosis.
+                        
+                        Context: The user is describing health symptoms.
+                        Task:
+                        1.  Analyze the symptoms provided: "${message}".
+                        2.  Suggest potential causes or conditions associated with these symptoms.
+                        3.  If the symptoms are vague, ask clarifying questions.
+                        4.  ALWAYS provide a clear DISCLAIMER that you are an AI and this is not a medical diagnosis. Advice them to visit a doctor using the Map feature if symptoms persist or are severe.
+                        5.  Keep the answer concise and empathetic.` }]
+                        }],
                     }),
                 }
             );
