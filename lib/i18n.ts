@@ -27,8 +27,8 @@ const neTranslation = {
   },
   ai: {
     chatTitle: "AI स्वास्थ्य सल्लाहकार",
-    chatPlaceholder: "आफ्नो स्वास्थ्य जिज्ञासा सोध्नुहोस्...",
-    getAdvice: "स्वास्थ्य सल्लाह लिनुहोस्"
+    chatPlaceholder: "तपाईंको लक्षणहरू वर्णन गर्नुहोस्...",
+    getAdvice: "AI स्वास्थ्य सल्लाह प्राप्त गर्नुहोस्"
   },
   home: {
     title: "सरल सेवा - हाम्रो सेवामा स्वागत छ",
@@ -90,8 +90,8 @@ const enTranslation = {
   },
   ai: {
     chatTitle: "AI Health Advisor",
-    chatPlaceholder: "Ask your health query...",
-    getAdvice: "Get Health Advice"
+    chatPlaceholder: "Describe your symptoms...",
+    getAdvice: "Get AI Health Advice"
   },
   home: {
     title: "SaralSewa - Welcome to Hamro Sewa",

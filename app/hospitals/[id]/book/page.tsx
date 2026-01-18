@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { use, useState } from 'react';
+import { bookAppointment } from '@/app/actions/bookAppointment';
 
 export default function BookingPage({ params }: { params: Promise<{ id: string }> }) {
     const searchParams = useSearchParams();
@@ -24,11 +25,24 @@ export default function BookingPage({ params }: { params: Promise<{ id: string }
         e.preventDefault();
         setIsLoading(true);
 
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
+        try {
+            const result = await bookAppointment({
+                ...formData,
+                hospitalId: id,
+                department: department || undefined
+            });
 
-        setIsLoading(false);
-        setIsSuccess(true);
+            if (result.success) {
+                setIsSuccess(true);
+            } else {
+                alert('Failed to book appointment. Please try again.');
+            }
+        } catch (error) {
+            console.error('Booking error:', error);
+            alert('An unexpected error occurred.');
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
