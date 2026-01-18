@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { getGeminiResponse } from '../actions/getGeminiResponse';
+import { getAIResponse } from '../actions/getAIResponse';
 
 interface Message {
     role: 'user' | 'bot';
@@ -35,24 +35,25 @@ export default function AISewaPage() {
         setIsLoading(true);
 
         try {
-            const response = await getGeminiResponse(input);
+            const response = await getAIResponse(input);
 
             if (response.success && response.text) {
                 setMessages(prev => [...prev, { role: 'bot', text: response.text }]);
             } else {
-                throw new Error('Failed to get response');
+                throw new Error(response.text || 'Failed to get response from server');
             }
         } catch (error) {
             console.error('AI Error:', error);
-            setMessages(prev => [...prev, { role: 'bot', text: 'I apologize, but I am having trouble connecting right now. Please try again later.' }]);
+            const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+            setMessages(prev => [...prev, { role: 'bot', text: `System Alert: ${errorMessage}` }]);
         } finally {
             setIsLoading(false);
         }
     };
 
     return (
-        <div className="min-h-screen bg-slate-50 dark:bg-slate-950 py-12 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto h-[700px] bg-white dark:bg-slate-900 rounded-2xl shadow-xl flex flex-col border border-slate-200 dark:border-slate-800 overflow-hidden">
+        <div className="min-h-[100dvh] bg-slate-50 dark:bg-slate-950 py-2 sm:py-12 px-2 sm:px-6 lg:px-8 flex flex-col justify-center">
+            <div className="w-full max-w-4xl mx-auto h-[90vh] sm:h-[700px] bg-white dark:bg-slate-900 rounded-2xl shadow-xl flex flex-col border border-slate-200 dark:border-slate-800 overflow-hidden">
                 {/* Chat Header */}
                 <div className="bg-green-600 p-4 text-white flex items-center justify-between">
                     <div className="flex items-center space-x-3">
@@ -62,10 +63,10 @@ export default function AISewaPage() {
                             </svg>
                         </div>
                         <div>
-                            <h1 className="text-xl font-bold">{t('ai.chatTitle')}</h1>
+                            <h1 className="text-xl font-bold">Health Check</h1>
                             <p className="text-sm text-green-100 flex items-center">
                                 <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
-                                AI Assistant Online
+                                AI Health Assistant
                             </p>
                         </div>
                     </div>
