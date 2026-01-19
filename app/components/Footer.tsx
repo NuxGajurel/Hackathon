@@ -19,6 +19,7 @@ export default function Footer() {
               <li><a href="/services" className="hover:text-[#48C78E] transition">Services</a></li>
               <li><a href="/doctors" className="hover:text-[#48C78E] transition">Find Doctors</a></li>
               <li><a href="/emergency" className="hover:text-[#48C78E] transition">Emergency</a></li>
+              <li><a href="/admin/dashboard" className="hover:text-[#48C78E] transition border-t border-gray-600 pt-2 mt-2 inline-block">Admin Dashboard</a></li>
             </ul>
           </div>
 
