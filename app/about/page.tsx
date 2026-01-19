@@ -81,15 +81,15 @@ export default function About() {
       <section className="relative py-32 overflow-hidden" id="hero-3d-section">
         {/* 3D Animated Background Elements */}
         <div className="absolute inset-0 pointer-events-none">
-          <div 
+          <div
             className="absolute top-20 left-10 w-72 h-72 bg-[#48C78E]/15 rounded-full blur-3xl"
             style={{ animation: 'orbit3d 20s linear infinite' }}
           ></div>
-          <div 
+          <div
             className="absolute bottom-20 right-10 w-96 h-96 bg-[#3db07d]/15 rounded-full blur-3xl"
             style={{ animation: 'orbit3d 25s linear infinite reverse' }}
           ></div>
-          <div 
+          <div
             className="absolute top-1/2 left-1/2 w-64 h-64 bg-[#48C78E]/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"
             style={{ animation: 'pulse3d 8s ease-in-out infinite' }}
           ></div>
@@ -97,15 +97,15 @@ export default function About() {
 
         {/* Floating 3D Shapes */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div 
+          <div
             className="absolute top-1/4 left-1/4 w-4 h-4 bg-[#48C78E]/30 rounded-full"
             style={{ animation: 'floatShape 12s ease-in-out infinite' }}
           ></div>
-          <div 
+          <div
             className="absolute top-3/4 right-1/4 w-6 h-6 bg-[#3db07d]/30 rounded-full"
             style={{ animation: 'floatShape 15s ease-in-out infinite 2s' }}
           ></div>
-          <div 
+          <div
             className="absolute bottom-1/4 left-1/3 w-3 h-3 bg-[#48C78E]/25 rounded-full"
             style={{ animation: 'floatShape 10s ease-in-out infinite 4s' }}
           ></div>
@@ -113,9 +113,9 @@ export default function About() {
 
         <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
           <div className="space-y-8" style={{ perspective: '1500px', transformStyle: 'preserve-3d' }}>
-            <div 
+            <div
               className="inline-block px-5 py-2.5 text-[#48C78E] font-semibold text-sm uppercase tracking-wider transform transition-all duration-500 hover:scale-105"
-              style={{ 
+              style={{
                 transformStyle: 'preserve-3d',
                 animation: 'depth3d 12s ease-in-out infinite',
                 backfaceVisibility: 'hidden'
@@ -123,7 +123,7 @@ export default function About() {
             >
               About Hamro Swastra
             </div>
-            <h1 
+            <h1
               className="text-5xl md:text-6xl font-bold text-[#3B4D5E] leading-tight transform transition-all duration-500"
               style={{
                 transformStyle: 'preserve-3d',
@@ -132,7 +132,7 @@ export default function About() {
               }}
             >
               Connecting Patients with
-              <span 
+              <span
                 className="block text-[#48C78E] mt-2 transform transition-all duration-500 hover:scale-105"
                 style={{
                   display: 'inline-block',
@@ -144,7 +144,7 @@ export default function About() {
                 Expert Doctors
               </span>
             </h1>
-            <p 
+            <p
               className="text-lg md:text-xl text-[#6A7C8E] leading-relaxed max-w-2xl mx-auto font-light transform transition-all duration-500"
               style={{
                 transformStyle: 'preserve-3d',
@@ -152,13 +152,14 @@ export default function About() {
                 backfaceVisibility: 'hidden'
               }}
             >
-              Your trusted healthcare platform connecting you with qualified hospital doctors 
+              Your trusted healthcare platform connecting you with qualified hospital doctors
               and specialists across Nepal through AI-powered solutions.
             </p>
           </div>
         </div>
 
-        <style dangerouslySetInnerHTML={{__html: `
+        <style dangerouslySetInnerHTML={{
+          __html: `
           @keyframes depth3d {
             0%, 100% {
               transform: translateZ(0px) rotateX(0deg) rotateY(0deg);
@@ -262,13 +263,13 @@ export default function About() {
                 Connecting Patients with Expert Doctors
               </h2>
               <p className="text-lg text-[#6A7C8E] leading-relaxed">
-                We believe every patient deserves access to quality healthcare from certified hospital 
-                doctors, regardless of location or background. Our platform connects patients directly 
+                We believe every patient deserves access to quality healthcare from certified hospital
+                doctors, regardless of location or background. Our platform connects patients directly
                 with experienced medical professionals and hospitals to create a seamless healthcare experience.
               </p>
               <p className="text-lg text-[#6A7C8E] leading-relaxed">
-                By leveraging AI technology and our network of hospital doctors and specialists, we're 
-                reducing wait times from months to minutes and making expert medical care accessible 
+                By leveraging AI technology and our network of hospital doctors and specialists, we're
+                reducing wait times from months to minutes and making expert medical care accessible
                 to everyone across Nepal.
               </p>
             </div>
@@ -307,13 +308,13 @@ export default function About() {
                 A Healthier Future for All
               </h2>
               <p className="text-lg text-[#6A7C8E] leading-relaxed">
-                We envision a Nepal where every patient has immediate access to expert hospital doctors 
-                and specialists, where medical consultations are convenient and accessible, and where 
+                We envision a Nepal where every patient has immediate access to expert hospital doctors
+                and specialists, where medical consultations are convenient and accessible, and where
                 families feel confident in receiving quality healthcare services.
               </p>
               <p className="text-lg text-[#6A7C8E] leading-relaxed">
-                Through continuous innovation and partnerships with hospitals and medical institutions, 
-                we're building a comprehensive healthcare network that serves patients across the nation 
+                Through continuous innovation and partnerships with hospitals and medical institutions,
+                we're building a comprehensive healthcare network that serves patients across the nation
                 with professionalism and care.
               </p>
             </div>
@@ -402,7 +403,7 @@ export default function About() {
               Leadership & Expertise
             </h2>
             <p className="text-lg text-[#6A7C8E] max-w-2xl mx-auto">
-              Our diverse team brings together experienced hospital doctors, medical specialists, 
+              Our diverse team brings together experienced hospital doctors, medical specialists,
               technology innovation, and a passion for connecting patients with quality healthcare.
             </p>
           </div>
@@ -477,9 +478,9 @@ export default function About() {
                   Your Privacy & Security Matter
                 </h2>
                 <p className="text-[#6A7C8E] leading-relaxed">
-                  We take data protection seriously. All health information is encrypted, 
-                  stored securely, and never shared without explicit consent. We comply with 
-                  healthcare data protection regulations and maintain the highest standards 
+                  We take data protection seriously. All health information is encrypted,
+                  stored securely, and never shared without explicit consent. We comply with
+                  healthcare data protection regulations and maintain the highest standards
                   of privacy and security.
                 </p>
                 <div className="flex flex-wrap gap-4">
@@ -539,31 +540,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Medical Disclaimer */}
-      <section className="py-12 bg-[#FFF5F5] border-t border-b border-red-100">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="bg-white p-8 rounded-xl border-2 border-red-200">
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
-                <svg className="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                </svg>
-              </div>
-              <div className="flex-1">
-                <h3 className="text-xl font-bold text-red-900 mb-3">Medical Disclaimer</h3>
-                <p className="text-red-800 leading-relaxed">
-                  <strong>Important:</strong> Hamro Swastra connects patients with qualified hospital doctors 
-                  and medical specialists. While our platform facilitates consultations with certified medical 
-                  professionals, all medical advice, diagnoses, and treatment recommendations are provided by 
-                  licensed doctors. For emergency medical situations, please contact emergency services immediately. 
-                  Always follow the medical advice of your treating physician and never delay seeking in-person 
-                  medical care when needed.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-[#3B4D5E] to-[#2a3a47] text-white">
