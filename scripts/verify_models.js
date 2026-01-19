@@ -13,12 +13,7 @@ if (!API_KEY) {
 }
 
 const MODELS = [
-    'mistralai/mistral-7b-instruct:free',
-    'meta-llama/llama-3-8b-instruct:free',
     'google/gemini-2.0-flash-exp:free',
-    'microsoft/phi-3-mini-128k-instruct:free',
-    'liquid/lfm-40b:free', // New candidate
-    'google/gemma-2-9b-it:free', // Another candidate
 ];
 
 async function checkModel(model) {
