@@ -51,7 +51,7 @@ export default function Navbar() {
                 />
               </div>
               <h1 className="text-xl font-bold bg-linear-to-r from-green-600 to-green-700 bg-clip-text text-transparent">
-                SaralSewa
+                Saral-Sewa
               </h1>
             </div>
           </Link>
@@ -66,10 +66,12 @@ export default function Navbar() {
                 : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
                 }`}
             >
+
+
               <svg className="w-5 h-5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
-              Ambulance Tracker
+              {t('Ambulance Tracker')}
             </Link>
             <Link
               href="/aisewa"
