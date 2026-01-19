@@ -71,7 +71,7 @@ export default function Navbar() {
               <svg className="w-5 h-5 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
-              {t('Ambulance Tracker')}
+              {t('nav.ambulance')}
             </Link>
             <Link
               href="/aisewa"
@@ -113,15 +113,7 @@ export default function Navbar() {
             >
               {t('nav.map')}
             </Link>
-            <Link
-              href="/admin/dashboard"
-              className={`px-4 py-2 rounded-lg transition-colors ${isActive('/admin/dashboard')
-                ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-medium'
-                : 'text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
-                }`}
-            >
-              Admin
-            </Link>
+
 
 
 
@@ -318,16 +310,7 @@ export default function Navbar() {
               >
                 {t('nav.map')}
               </Link>
-              <Link
-                href="/admin/dashboard"
-                onClick={() => setIsMenuOpen(false)}
-                className={`px-4 py-2 rounded-lg transition-colors ${isActive('/admin/dashboard')
-                  ? 'bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 font-medium'
-                  : 'text-slate-600 dark:text-slate-300'
-                  }`}
-              >
-                Admin
-              </Link>
+
 
               <div className="pt-2 border-t border-slate-200 dark:border-slate-700 flex flex-col space-y-2">
                 {user ? (

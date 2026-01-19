@@ -226,14 +226,7 @@ export default function Home() {
         `}} />
       </section>
 
-      {/* Floating Chat Button */}
-      <div className="fixed bottom-8 right-8 z-50">
-        <Link href="/emergency" className="w-16 h-16 bg-gradient-to-br from-[#48C78E] to-[#3db07d] rounded-full flex items-center justify-center shadow-xl hover:shadow-2xl transform hover:scale-110 transition-all duration-300 group">
-          <svg viewBox="0 0 24 24" className="w-8 h-8 text-white fill-current">
-            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" />
-          </svg>
-        </Link>
-      </div>
+
 
       {/* About Us Section */}
       <section className="py-20 px-4 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
@@ -277,7 +270,7 @@ export default function Home() {
           </div>
           <div className="flex gap-4 pt-6">
             <Link href="/about" className="px-8 py-3 bg-[#48C78E] text-white rounded-md font-bold shadow-md hover:bg-[#3db07d] transition">{t('home.learnMore')}</Link>
-            <Link href="/services" className="px-8 py-3 border border-gray-200 text-[#6A7C8E] rounded-md font-bold hover:bg-gray-50 transition">{t('home.bookNow')}</Link>
+            <Link href="/hospitals" className="px-8 py-3 border border-gray-200 text-[#6A7C8E] rounded-md font-bold hover:bg-gray-50 transition">{t('home.bookNow')}</Link>
           </div>
         </div>
       </section>

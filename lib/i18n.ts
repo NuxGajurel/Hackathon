@@ -17,7 +17,8 @@ const neTranslation = {
     logout: "लग आउट",
     map: "नक्सा",
     aiSewa: "AI सेवा",
-    ambulance: "एम्बुलेन्स ट्र्याकर"
+    ambulance: "एम्बुलेन्स ट्र्याकर",
+    admin: "एडमिन"
   },
   profile: {
     editProfile: "प्रोफाइल सम्पादन गर्नुहोस्",
@@ -96,7 +97,8 @@ const enTranslation = {
     logout: "Logout",
     map: "Map",
     aiSewa: "AISewa",
-    ambulance: "Ambulance Tracker"
+    ambulance: "Ambulance Tracker",
+    admin: "Admin"
   },
   profile: {
     editProfile: "Edit Profile",
