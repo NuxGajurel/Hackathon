@@ -2,14 +2,12 @@
 
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 
-// List of reliable free models to try in order
 const MODELS = [
-    'google/gemini-2.0-flash-thinking-exp:free', // Often more reliable
-    'google/gemini-2.0-flash-exp:free',          // Keep as backup
-    'google/gemini-2.0-pro-exp-02-05:free',      // Another option
-    'microsoft/phi-3-mini-128k-instruct:free',   // Good fallback
-    'meta-llama/llama-3.2-11b-vision-instruct:free', // reliable free model
-    'huggingfaceh4/zephyr-7b-beta:free'          // Stable fallback
+    'google/gemini-2.0-flash-exp:free',            // Best quality when available
+    'mistralai/mistral-7b-instruct:free',          // Reliable fallback
+    'meta-llama/llama-3-8b-instruct:free',         // Reliable fallback
+    'qwen/qwen-2-7b-instruct:free',                // Another good option
+    'openchat/openchat-7:free'                     // Fallback
 ];
 
 export async function getAIResponse(message: string) {
