@@ -16,7 +16,8 @@ const neTranslation = {
     profile: "प्रोफाइल",
     logout: "लग आउट",
     map: "नक्सा",
-    aiSewa: "AI सेवा"
+    aiSewa: "AI सेवा",
+    ambulance: "एम्बुलेन्स ट्र्याकर"
   },
   profile: {
     editProfile: "प्रोफाइल सम्पादन गर्नुहोस्",
@@ -28,7 +29,22 @@ const neTranslation = {
   ai: {
     chatTitle: "AI स्वास्थ्य सल्लाहकार",
     chatPlaceholder: "तपाईंको लक्षणहरू वर्णन गर्नुहोस्...",
-    getAdvice: "AI स्वास्थ्य सल्लाह प्राप्त गर्नुहोस्"
+    getAdvice: "AI स्वास्थ्य सल्लाह प्राप्त गर्नुहोस्",
+    // New additions
+    disclaimerTitle: "अस्वीकरण",
+    disclaimerText: "यो AI उपकरण शैक्षिक उद्देश्यका लागि मात्र हो। यो व्यावसायिक चिकित्सा सल्लाह, निदान वा उपचारको विकल्प होइन।",
+    emergencyTitle: "के यो आपतकालीन हो?",
+    emergencyText: "यदि तपाईंलाई चिकित्सा आपतकाल परेको छ भने, तुरुन्तै मद्दतको लागि कल गर्नुहोस्।",
+    callAmbulance: "एम्बुलेन्स बोलाउनुहोस् (१०२)",
+    assistantTitle: "AI स्वास्थ्य सहायक",
+    assistantSubtitle: "सधैं सहयोगको लागि यहाँ छु",
+    initialMessage: "नमस्ते! म तपाईंको सरल सेवा स्वास्थ्य सल्लाहकार हुँ। म तपाईंलाई लक्षणहरू बुझ्न र घरेलु उपचारहरू सुझाव दिन मद्दत गर्न सक्छु।\n\n**कृपया ध्यान दिनुहोस:** म एक AI हुँ, डाक्टर होइन। आपतकालीन अवस्थामा, कृपया एम्बुलेन्स बोलाउनुहोस्।",
+    suggestion1: "मलाई धेरै टाउको दुखेको छ",
+    suggestion2: "डेंगुको लक्षणहरू",
+    suggestion3: "बच्चालाई उच्च ज्वरो आएको छ",
+    suggestion4: "पेट दुख्ने घरेलु उपाय",
+    systemAlert: "प्रणाली चेतावनी",
+    tryAgain: "कृपया पछि फेरि प्रयास गर्नुहोस्"
   },
   home: {
     title: "सरल सेवा - हाम्रो सेवामा स्वागत छ",
@@ -79,7 +95,8 @@ const enTranslation = {
     profile: "Profile",
     logout: "Logout",
     map: "Map",
-    aiSewa: "AISewa"
+    aiSewa: "AISewa",
+    ambulance: "Ambulance Tracker"
   },
   profile: {
     editProfile: "Edit Profile",
@@ -91,7 +108,22 @@ const enTranslation = {
   ai: {
     chatTitle: "AI Health Advisor",
     chatPlaceholder: "Describe your symptoms...",
-    getAdvice: "Get AI Health Advice"
+    getAdvice: "Get AI Health Advice",
+    // New additions
+    disclaimerTitle: "Disclaimer",
+    disclaimerText: "This AI tool provides health information for educational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment.",
+    emergencyTitle: "Emergency?",
+    emergencyText: "If you have a medical emergency, call for help immediately.",
+    callAmbulance: "Call Ambulance (102)",
+    assistantTitle: "AI Health Assistant",
+    assistantSubtitle: "Always here to help",
+    initialMessage: "Namaste! I am your SaralSewa Health Advisor. I can help you understand symptoms and suggest home remedies. \n\n**Please note:** I am an AI, not a doctor. In emergencies, please call an ambulance.",
+    suggestion1: "I have a severe headache",
+    suggestion2: "Symptoms of Dengue",
+    suggestion3: "Baby has high fever",
+    suggestion4: "Stomach pain home remedies",
+    systemAlert: "System Alert",
+    tryAgain: "Please try again later"
   },
   home: {
     title: "SaralSewa - Welcome to Hamro Sewa",

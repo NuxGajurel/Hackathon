@@ -147,18 +147,17 @@ export default function Home() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-16">
-              <Link href="/doctors" className="px-8 py-3.5 bg-[#48C78E] text-white rounded-lg font-semibold text-base hover:bg-[#3db07d] transition shadow-md hover:shadow-xl hover:scale-105 text-center flex items-center justify-center gap-2">
+              <Link href="/aisewa" className="px-8 py-3.5 bg-[#48C78E] text-white rounded-lg font-semibold text-base hover:bg-[#3db07d] transition shadow-md hover:shadow-xl hover:scale-105 text-center flex items-center justify-center gap-2">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-                {t('home.findDoctor')}
+                {t('nav.aiSewa')}
               </Link>
-              <Link href="/doctors" className="px-8 py-3.5 bg-white border-2 border-gray-300 text-[#3B4D5E] rounded-lg font-semibold text-base hover:bg-gray-50 hover:border-[#48C78E] transition hover:scale-105 text-center flex items-center justify-center gap-2">
+              <Link href="/ambulance" className="px-8 py-3.5 bg-white border-2 border-gray-300 text-[#3B4D5E] rounded-lg font-semibold text-base hover:bg-gray-50 hover:border-[#48C78E] transition hover:scale-105 text-center flex items-center justify-center gap-2">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
-                {t('home.findNearbyDoctors')}
+                {t('nav.ambulance')}
               </Link>
             </div>
 
