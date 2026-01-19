@@ -1,8 +1,7 @@
 const https = require('https');
 
-// You can run this script with: node scripts/verify_models.js
-// Make sure OPENROUTER_API_KEY is set in your environment or .env file
-// If running locally without .env support in node, you might need to manually paste it or use dotenv
+
+
 require('dotenv').config({ path: '.env.local' });
 
 const API_KEY = process.env.OPENROUTER_API_KEY;
